@@ -6,7 +6,7 @@ import time
 import cv2
 import os
 import re
-from image_compressor import compressMe
+# from image_compressor import compressMe
 from PIL import Image
 
 
@@ -55,13 +55,13 @@ while True:
 		p = os.path.sep.join([args["output"], "{}.png".format(str(total).zfill(5))])
 		cv2.imwrite(p, orig)
 		print(p)
-		if p.lower() in ('.jpg', '.jpeg'):
-			compressMe(p)
-		elif p.endswith("png"):
-			im = Image.open(p)
-			rgb_im = im.convert('RGB')
-			rgb_im.save(p[:-3] + 'jpg')
-			os.remove(p)
+		# if p.lower() in ('.jpg', '.jpeg'):
+		# 	compressMe(p)
+		# elif p.endswith("png"):
+		# 	im = Image.open(p)
+		# 	rgb_im = im.convert('RGB')
+		# 	rgb_im.save(p[:-3] + 'jpg')
+		# 	os.remove(p)
 		total += 1
 
 	# if the 'q' key was pressed, break from the loop
